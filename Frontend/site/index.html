@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break the circle — Anaida Space</title>
+  <meta name="description" content="Anaida Space — a digital sanctuary for self-development, habit-building, and breaking the circle of stagnation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@700&family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body data-page="home">
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<nav class="topnav" id="topnav">
+  <div class="nav-pills" id="navPills">
+    <button class="nav-pill active" data-target="home" id="pill-home">Home</button>
+    <button class="nav-pill" data-target="goal" id="pill-goal">MyGoal</button>
+    <button class="nav-pill" data-target="people" id="pill-people">My People</button>
+    <button class="nav-pill" data-target="motivation" id="pill-motivation">Motivation &amp; Discipline</button>
+    <button class="nav-pill" data-target="features" id="pill-features">Features</button>
+    <button class="nav-pill" data-target="challenges" id="pill-challenges">Challenge</button>
+  </div>
+  <div class="nav-avatar" id="navAvatar" title="About Anaida" data-target="about"></div>
+</nav>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<section class="screen active" id="home">
+
+  <!-- Hero -->
+  <div class="home-hero" id="heroSection">
+    <!-- Parallax depth layers -->
+    <div class="parallax-stars" id="parallaxStars"></div>
+    <div class="parallax-glow" id="parallaxGlow"></div>
+
+    <div class="hero-frame" id="heroFrame">
+      <img src="../img/cosmos_1882143318.jpeg" alt="Cosmos portrait" class="hero-main-img hero-fullscreen" onerror="this.style.display='none'">
+    </div>
+
+    <div class="parallax-vignette"></div>
+
+    <!-- Cursive logo top-left -->
+    <div class="hero-logo" id="heroLogo">Anaida<br>Space</div>
+    <a href="journey.html" class="cta-btn" id="ctaJourney">Start<br>Your Journey</a>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll-indicator" id="heroScrollIndicator">
+      <div class="scroll-mouse">
+        <div class="scroll-mouse-dot"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </div>
+
+  <!-- Start Your Journey text block -->
+  <section class="roadmap-section">
+    <h2 class="roadmap-title">How It Works</h2>
+    <div class="roadmap-container">
+        <div class="roadmap-step" data-step="1">
+            <div class="step-number">01</div>
+            <h3>Choose Your Goal</h3>
+            <p>Define what matters most to you and set your target.</p>
+        </div>
+        <div class="roadmap-step" data-step="2">
+            <div class="step-number">02</div>
+            <h3>Take the Test</h3>
+            <p>Complete a quick assessment to analyze your starting point.</p>
+        </div>
+        <div class="roadmap-step" data-step="3">
+            <div class="step-number">03</div>
+            <h3>Get Your Plan</h3>
+            <p>Receive a custom-built roadmap tailored to your needs.</p>
+        </div>
+        <div class="roadmap-step" data-step="4">
+            <div class="step-number">04</div>
+            <h3>Track Every Step</h3>
+            <p>Monitor your progress and stay consistent every day.</p>
+        </div>
+    </div> </section>
+
+
+  <!-- Quiz Modal -->
+  <div class="pomo-modal full-screen" id="quizModal">
+    <div class="quiz-card">
+      <button id="closeQuiz" style="position: absolute; top: 30px; right: 30px; background: none; border: none; color: white; font-size: 2.5rem; cursor: pointer; z-index: 10;">&times;</button>
+      <div id="quizContent" style="width: 100%; max-width: 600px; padding: 20px;"></div>
+    </div>
+  </div>
+
+ <div class="home-butterfly" style="background-color: #040404; position: relative; min-height: 55vh; display: flex; align-items: center; justify-content: space-between; padding: 60px 40px; overflow: hidden;">
+  <div class="butterfly-logo" style="font-family: 'Roboto Mono', monospace; font-size: 2rem; color: #ffffff; line-height: 1.15; z-index: 2;">
+    Anaida<br>Space
+  </div>
+  <img src="../img/cosmos_840327049.png" alt="Transformation butterfly" class="butterfly-img" style="position: absolute; right: 0; bottom: 0; height: 92%; object-fit: contain; opacity: .85; z-index: 1;" onerror="this.style.display='none'">
+</div>
+
+  <!-- Motivation vs Discipline banner — Interactive -->
+  <div class="home-motivation home-motivation--interactive" id="motivationBanner">
+    <div class="motivation-banner-content">
+      <div class="motivation-banner-left">
+        <span class="banner-label">Explore</span>
+        <h2>Motivation <span class="vs-glow">vs</span> Discipline</h2>
+        <p class="banner-teaser">What truly drives lasting change? Tap to discover the science behind habits.</p>
+      </div>
+      <div class="motivation-banner-right">
+        <div class="banner-icon-wrap">
+          <svg class="banner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="banner-particles" aria-hidden="true"></div>
+  </div>
+
+<div class="home-journal">
+  <div class="journal-img-wrap">
+    <img src="../img/cosmos_1720778025.jpeg" alt="Journal" class="journal-img" onerror="this.style.background='rgba(255,255,255,.05)'">
+  </div>
+  <div class="journal-text">
+    <p>This space was created for YOU.<br>Here is all you need to<br>become who you truly are.</p>
+    <p class="journal-sub">All in your hands</p>
+  </div>
+
+</div>
+  <!-- Break the Circle footer -->
+  <div class="home-btc">
+    <div class="btc-headline">Break the<br>circle</div>
+    <div class="btc-footer">
+      <div>
+        <a href="index.html">Home</a>
+        <a href="test.html" target="_blank" rel="noopener noreferrer">Test</a>
+        <a href="registration.html">Register</a>
+        <a href="#">Archive</a>
+        <a href="#">About</a>
+      </div>
+      <div>
+        <a href="#">Instagram</a>
+        <a href="#">Threads</a>
+        <a href="#">YouTube</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+    <div class="btc-copy">©2025 Grain Archive · Words, images, and signals from the edge</div>
+  </div>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+</section>
+
+
+<!-- ═══════════════════════ FEATURES / POMODORO ═══════════════════════ -->
+<section class="screen" id="features">
+  <div class="features-page" id="featuresHome">
+    <h1 class="features-title">FEATURES</h1>
+    <p class="features-subtitle">Choose what you want to use</p>
+
+    <div class="features-grid">
+      <button class="feature-card" data-feature="pomodoro">
+        <span class="feature-card-title">Pomodoro</span>
+        <span class="feature-card-desc">Focus timer with custom focus and break sessions.</span>
+      </button>
+      <button class="feature-card feature-card--soon" disabled>
+        <span class="feature-card-title">Habit Tracker</span>
+        <span class="feature-card-desc">Coming soon</span>
+      </button>
+      <button class="feature-card feature-card--soon" disabled>
+        <span class="feature-card-title">Deep Work Music</span>
+        <span class="feature-card-desc">Coming soon</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="pomodoro-page feature-panel" id="pomodoroPanel">
+    <button class="feature-back-btn" id="backToFeatures">← Back to Features</button>
+    <h1 class="pomodoro-title">POMODORO</h1>
+
+    <div class="pomodoro-controls">
+      <button class="pomo-btn" id="changeTimeBtn">Change<br>Time</button>
+      <button class="pomo-btn" id="changeBreakBtn">Change<br>Break</button>
+    </div>
+
+    <!-- Timer display — no ring, just big number -->
+    <div class="pomodoro-display" id="timerDisplay">25:00</div>
+    <div class="pomodoro-state" id="pomodoroState">Focus Time</div>
+
+    <div class="pomodoro-actions">
+      <button class="pomo-action-btn" id="startBtn">Start</button>
+      <button class="pomo-action-btn secondary" id="resetBtn">Reset</button>
+    </div>
+
+    <!-- Decorative cat -->
+    <div class="pomo-cat-wrap">
+      <img src="../img/cosmos_840327049.jpeg" alt="cat" class="pomo-cat-img" onerror="this.style.display='none'">
+      <div class="pomo-cat-emoji">🐱</div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal: change time -->
+<div class="pomo-modal" id="timeModal">
+  <div class="pomo-modal-box">
+    <h3 id="modalTitle">Set Focus Time (minutes)</h3>
+    <input type="number" id="modalInput" min="1" max="99" value="25">
+    <div class="pomo-modal-actions">
+      <button class="confirm" id="modalConfirm">Apply</button>
+      <button class="cancel" id="modalCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ MY PEOPLE ═══════════════════════ -->
+<section class="screen" id="people">
+  <!-- Full-width hero photo with title overlay -->
+  <div class="people-hero">
+    <img src="../img/cosmos_316863339.jpeg" alt="Your People" class="people-hero-img" onerror="this.src='../img/cosmos_1779123708.jpeg'">
+    <div class="people-hero-overlay">
+      <h1 class="people-title">Your<br>People</h1>
+    </div>
+  </div>
+
+  <!-- Groups -->
+  <div class="chats-section">
+    <h2 class="chats-heading">Groups</h2>
+
+    <!-- Create group -->
+    <div class="chat-input-wrap" style="margin-bottom: 20px;">
+      <input type="text" class="chat-input" id="groupInput" placeholder="New group name…">
+      <button class="chat-send-btn" id="groupCreate" style="min-width:72px;font-size:.85rem;">Create</button>
+    </div>
+
+    <!-- Group list -->
+    <div id="groupList" class="group-list"></div>
+
+    <!-- Community chat -->
+    <h2 class="chats-heading" style="margin-top:32px;">Community Chat</h2>
+    <div class="chat-list" id="chatList">
+      <div class="chat-item">
+        <div class="chat-avatar-img">
+          <img src="../img/cosmos_1882143318.jpeg" alt="user" onerror="this.parentElement.innerHTML='🌿'">
+        </div>
+        <div class="chat-bubble">We will continue tomorrow 🌿</div>
+      </div>
+    </div>
+    <div class="chat-input-wrap">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Type a message…">
+      <button class="chat-send-btn" id="chatSend">→</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ CHALLENGES ═══════════════════════ -->
+<section class="screen" id="challenges">
+  <div class="challenges-page">
+    <h1 class="challenges-title">Challenges</h1>
+    <div class="challenge-input-wrap">
+      <input type="text" class="challenge-input" id="challengeInput" placeholder="">
+      <button class="challenge-join-btn" id="challengeJoin">Join</button>
+    </div>
+    <div id="challengeList"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MOTIVATION & DISCIPLINE ═══════════════════════ -->
+<section class="screen" id="motivation">
+  <div class="motivation-page motivation-page--animated">
+
+    <!-- Hero Header -->
+    <div class="motiv-hero">
+      <div class="motiv-hero-bg"></div>
+      <div class="motiv-hero-content">
+        <span class="motiv-kicker anim-slide-up">Understanding the difference</span>
+        <h1 class="motiv-hero-title anim-slide-up delay-1">
+          <span class="motiv-word-motivation">Motivation</span>
+          <span class="motiv-vs">vs</span>
+          <span class="motiv-word-discipline">Discipline</span>
+        </h1>
+        <p class="motiv-hero-sub anim-slide-up delay-2">One is a spark. The other is the engine. Learn why discipline always wins in the long run — and how to build it.</p>
+      </div>
+      <div class="motiv-scroll-indicator anim-fade delay-3">
+        <span>Scroll to read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+
+    <!-- Visual Comparison Section -->
+    <div class="motiv-comparison" id="motivComparison">
+      <h2 class="motiv-section-title anim-reveal">Two forces. One choice.</h2>
+      <div class="comparison-grid">
+        <div class="comparison-card comparison-card--motivation anim-reveal">
+          <div class="comp-card-header">
+            <div class="comp-icon">🔥</div>
+            <h3>Motivation</h3>
+          </div>
+          <ul class="comp-traits">
+            <li><span class="trait-icon">⚡</span> Emotion-driven — fueled by excitement, inspiration, or fear</li>
+            <li><span class="trait-icon">🌊</span> Unpredictable — comes in waves, peaks and crashes</li>
+            <li><span class="trait-icon">🎯</span> Great for starting — sparks the first step</li>
+            <li><span class="trait-icon">⏳</span> Temporary — fades when novelty wears off</li>
+            <li><span class="trait-icon">🧠</span> Depends on mood, environment, and dopamine levels</li>
+          </ul>
+          <div class="comp-verdict"><em>"I'll do it when I feel like it."</em></div>
+        </div>
+
+        <div class="comparison-divider anim-reveal">
+          <div class="divider-line"></div>
+          <span class="divider-badge">VS</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="comparison-card comparison-card--discipline anim-reveal">
+          <div class="comp-card-header">
+            <div class="comp-icon">⚙️</div>
+            <h3>Discipline</h3>
+          </div>
+          <ul class="comp-traits">
+            <li><span class="trait-icon">🏗️</span> System-driven — built on habits, routines, and structure</li>
+            <li><span class="trait-icon">📈</span> Consistent — shows up every single day, rain or shine</li>
+            <li><span class="trait-icon">🔄</span> Great for sustaining — keeps you going when motivation dies</li>
+            <li><span class="trait-icon">♾️</span> Permanent — becomes part of your identity over time</li>
+            <li><span class="trait-icon">🛡️</span> Independent of mood — runs on commitment, not feelings</li>
+          </ul>
+          <div class="comp-verdict"><em>"I'll do it because I committed to it."</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="motiv-article">
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">01</div>
+        <h2>The Motivation Trap</h2>
+        <p>We've been sold a beautiful lie: that in order to do something, you need to <strong>feel</strong> like doing it. Social media is flooded with "motivation" content — powerful speeches, transformation montages, aesthetic morning routines. They make you feel unstoppable… for about 20 minutes.</p>
+        <p>Then the feeling fades. The alarm rings at 5 AM, and suddenly you don't feel very motivated anymore. The gym feels far. The book feels boring. The project feels pointless.</p>
+        <p>This is the <strong>motivation trap</strong>: relying on a temporary emotional state as the engine of permanent change. It's like trying to power a city with lightning — brilliant, but unreliable.</p>
+        <blockquote class="motiv-quote">
+          <span class="quote-mark">"</span>
+          Motivation is what gets you started. Habit is what keeps you going.
+          <cite>— Jim Ryun</cite>
+        </blockquote>
+      </div>
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">02</div>
+        <h2>What Discipline Actually Is</h2>
+        <p>Discipline is not about being hard on yourself. It's not about punishment, deprivation, or white-knuckling your way through misery. <strong>Discipline is a system of decisions made in advance.</strong></p>
+        <p>When you're disciplined, you don't waste energy deciding whether to work out — you already decided on Sunday. You don't debate whether to study — it's blocked on your calendar. You don't negotiate with yourself about junk food — it's not in your kitchen.</p>
+        <p>Discipline is removing the daily decision fatigue by pre-committing. It turns "should I?" into "it's just what I do." It shifts the battle from willpower (which is limited) to <strong>identity</strong> (which is self-reinforcing).</p>
+        <div class="motiv-insight-box">
+          <div class="insight-icon">💡</div>
+          <div>
+            <strong>Key Insight</strong>
+            <p>Researchers at the University of Chicago found that people who appear to have strong self-control actually experience <em>fewer</em> temptations — because their environments and habits are designed to reduce friction, not fight it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">03</div>
+        <h2>The Science: Why Motivation Fails</h2>
+        <p>Neuroscience shows us exactly why motivation is unreliable. It's driven by <strong>dopamine</strong> — a neurotransmitter that surges when we <em>anticipate</em> a reward, not when we actually receive it. That's why the idea of starting a new diet feels exciting on January 1st, but eating chicken and vegetables for the 14th day in a row doesn't trigger the same response.</p>
+        <p>Dopamine spikes are highest with <strong>novelty</strong>. Every new goal, new routine, new "this time will be different" moment triggers a hit. But the brain adapts. What once felt exciting becomes neutral. This is called <strong>hedonic adaptation</strong> — and it's the biological reason motivation cannot sustain you.</p>
+        <p>Discipline bypasses this cycle entirely. When an action becomes a <strong>habit</strong>, it moves from the prefrontal cortex (decision-making) to the <strong>basal ganglia</strong> (automatic behavior). It becomes as effortless as brushing your teeth. You don't need motivation to brush your teeth — you just do it.</p>
+      </div>
+
+      <!-- Interactive Stat Counter -->
+      <div class="motiv-stats anim-reveal">
+        <div class="stat-card">
+          <div class="stat-number" data-target="92">0</div>
+          <div class="stat-unit">%</div>
+          <div class="stat-label">of New Year's resolutions fail within the first month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="66">0</div>
+          <div class="stat-unit">days</div>
+          <div class="stat-label">average time to form a new habit (UCL study)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="37">0</div>
+          <div class="stat-unit">×</div>
+          <div class="stat-label">better in one year if you improve 1% daily</div>
+        </div>
+      </div>
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">04</div>
+        <h2>Build Your System — The Architecture of Change</h2>
+        <p>James Clear, author of <em>Atomic Habits</em>, puts it best: <strong>"You do not rise to the level of your goals. You fall to the level of your systems."</strong> Every person who failed a goal had a goal. The difference is the system behind it.</p>
+        <p>Here's how to architect your discipline:</p>
+
+        <div class="motiv-steps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Make it Obvious</h4>
+              <p>Put your running shoes next to your bed. Set your study materials on your desk the night before. Use visual cues to trigger the behavior you want.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Make it Easy</h4>
+              <p>Reduce friction. Start with a 2-minute version of any habit. Instead of "run 5 km" start with "put on your running shoes." The hardest part is showing up.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Make it Satisfying</h4>
+              <p>Track your streaks. Celebrate tiny wins. Your brain needs feedback loops to wire a habit into your neural pathways permanently.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Make it Unavoidable</h4>
+              <p>Use commitment devices. Tell a friend. Set stakes. Remove escape routes. When skipping isn't an option, discipline becomes default.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">05</div>
+        <h2>Break the Circle</h2>
+        <p>The "circle" is the invisible loop most people are trapped in: <strong>get motivated → start strong → lose steam → feel guilty → wait for new motivation → repeat.</strong> This cycle can last months. Years. An entire lifetime, if you let it.</p>
+        <p>Breaking it requires a fundamentally different approach. Instead of waiting for a feeling, you make a <strong>commitment to a process</strong>. You don't need to feel like a runner to run. You run, and eventually, you feel like a runner.</p>
+        <p>Identity follows behavior. Not the other way around.</p>
+        <blockquote class="motiv-quote">
+          <span class="quote-mark">"</span>
+          We are what we repeatedly do. Excellence, then, is not an act, but a habit.
+          <cite>— Aristotle (paraphrased by Will Durant)</cite>
+        </blockquote>
+      </div>
+
+      <div class="motiv-block anim-reveal">
+        <div class="motiv-block-number">06</div>
+        <h2>The 1% Rule — Compound Growth of Habits</h2>
+        <p>You don't need a dramatic transformation. The math of small improvements is staggering:</p>
+        <div class="motiv-math-visual">
+          <div class="math-item math-item--bad">
+            <span class="math-formula">0.99<sup>365</sup></span>
+            <span class="math-result">= 0.03</span>
+            <span class="math-label">1% worse every day → you nearly disappear</span>
+          </div>
+          <div class="math-item math-item--good">
+            <span class="math-formula">1.01<sup>365</sup></span>
+            <span class="math-result">= 37.78</span>
+            <span class="math-label">1% better every day → you become 37× better</span>
+          </div>
+        </div>
+        <p>This is the power of compounding. Each day you show up, you're not just doing the task — you're casting a vote for the person you want to become. Each vote strengthens the identity. Each missed day weakens it. The choice is always today.</p>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="motiv-final-cta anim-reveal">
+        <h2>Stop waiting to feel ready.</h2>
+        <p>Motivation will visit. Discipline will stay. Start building your system today — and the results will take care of themselves.</p>
+        <button class="motiv-start-btn" id="motivStartBtn">Start Building Your Habits</button>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section class="screen" id="about">
+  <div class="about-page">
+    <!-- YouTube channel embed at top -->
+    <div class="about-yt-embed">
+      <iframe
+        src="https://www.youtube.com/embed?listType=user_uploads&list=anaida13"
+        title="Anaida YouTube Channel"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Profile section: photo + info -->
+    <div class="about-profile">
+      <img src="../img/duotone%20(2).png" alt="Anaida" class="about-img" onerror="this.style.background='rgba(255,255,255,.1)'">
+      <div class="about-info">
+        <h1 class="about-name">Anaida</h1>
+        <p class="about-handle">@anaida13 · 700K+ followers</p>
+        <p class="about-bio">
+          Content creator, self-development advocate, and founder of Anaida Space.<br><br>
+          This space was created for those who want to become who they truly are.
+          Here is all you need — all in your hands.
+        </p>
+      </div>
+    </div>
+
+    <!-- Video player -->
+    <div class="about-video-wrap" id="aboutVideo">
+      <div class="yt-play-icon">▶</div>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="js/app.js"></script>
+
+
+</body>
+</html>
