@@ -43,12 +43,12 @@ This project is designed for high-performers, creatives, and seekers who feel "s
 
 1. **Install backend dependencies**:
    ```bash
-   pip install -r Habits1/requirements.txt
+   pip install -r backend/requirements.txt
    ```
 
 2. **Run the backend server**:
    ```bash
-   uvicorn Habits1.main:app --reload
+   uvicorn backend.main:app --reload
    ```
 
 3. **Access the Application**:
