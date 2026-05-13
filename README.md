@@ -46,13 +46,23 @@ This project is designed for high-performers, creatives, and seekers who feel "s
    pip install -r backend/requirements.txt
    ```
 
-2. **Run the backend server**:
+2. **Run both backend and frontend together**:
    ```bash
-   uvicorn backend.main:app --reload
+   python3 dev.py
    ```
 
-3. **Access the Application**:
-   - **Frontend App**: The modern UI can be accessed via the static files served by the app (e.g., `http://127.0.0.1:8000/static/index.html` or similar).
-   - **API Documentation (Swagger UI)**: `http://127.0.0.1:8000/docs`
-   - **API Documentation (ReDoc)**: `http://127.0.0.1:8000/redoc`
-   - **Healthcheck**: `http://127.0.0.1:8000/health`
+   This starts:
+   - backend API on `http://127.0.0.1:8080`
+   - frontend static server on `http://127.0.0.1:3000`
+
+3. **Run only the backend server**:
+   ```bash
+   uvicorn backend.main:app --reload --port 8080
+   ```
+
+4. **Access the Application**:
+   - **Frontend App**: `http://127.0.0.1:3000`
+   - **Frontend via backend**: `http://127.0.0.1:8080/static/index.html`
+   - **API Documentation (Swagger UI)**: `http://127.0.0.1:8080/docs`
+   - **API Documentation (ReDoc)**: `http://127.0.0.1:8080/redoc`
+   - **Healthcheck**: `http://127.0.0.1:8080/health`

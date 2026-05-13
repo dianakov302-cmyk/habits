@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
@@ -20,13 +21,26 @@ def load_env_file() -> None:
 
 load_env_file()
 
-MONGODB_URI = os.getenv("MONGODB_URI", "mongodb+srv://dianakov_db_user:QhlttWmzwksqA7yY@habitcluster1.yzrxxet.mongodb.net/")
-# Add tlsAllowInvalidCertificates for development
-if "tlsAllowInvalidCertificates" not in MONGODB_URI and "mongodb+srv" in MONGODB_URI:
-    MONGODB_URI += "?tlsAllowInvalidCertificates=true&retryWrites=true&w=majority"
-elif "mongodb+srv" not in MONGODB_URI:
-    # For local MongoDB
-    pass
+def normalize_mongodb_uri(uri: str) -> str:
+    if "mongodb+srv" not in uri:
+        return uri
+
+    parts = urlsplit(uri)
+    query_params = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query_params.setdefault("tlsAllowInvalidCertificates", "true")
+    query_params.setdefault("retryWrites", "true")
+    query_params.setdefault("w", "majority")
+    normalized_query = urlencode(query_params)
+
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, normalized_query, parts.fragment))
+
+
+MONGODB_URI = normalize_mongodb_uri(
+    os.getenv(
+        "MONGODB_URI",
+        "mongodb+srv://dianakov_db_user:QhlttWmzwksqA7yY@habitcluster1.yzrxxet.mongodb.net/",
+    )
+)
 
 MONGODB_DB_NAME = os.getenv("MONGODB_DB_NAME", "habitplatform")
 MONGODB_TIMEOUT_MS = int(os.getenv("MONGODB_TIMEOUT_MS", "5000"))

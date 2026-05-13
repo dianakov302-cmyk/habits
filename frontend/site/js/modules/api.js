@@ -7,9 +7,6 @@ function getApiBaseUrl() {
   if (configured && typeof configured === 'string') {
     return configured.replace(/\/+$/, '');
   }
-  if (window.location && window.location.origin && window.location.origin !== 'null') {
-    return window.location.origin.replace(/\/+$/, '');
-  }
   return DEFAULT_API_BASE_URL;
 }
 
